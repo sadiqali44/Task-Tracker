@@ -1,0 +1,287 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: #0d0f14; /* ChatGPT background */
+  color: #e6e6eb;
+  padding: 24px;
+}
+
+/* ================= APP CONTAINER ================= */
+.app {
+  max-width: 680px;
+  margin: auto;
+  background: #16181d; /* ChatGPT card */
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid #23262d;
+}
+
+/* ================= HEADER ================= */
+.app h1 {
+  text-align: center;
+  margin-bottom: 26px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+/* ================= ADD TASK BUTTON ================= */
+.add-btn {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 22px;
+  background: #2a2d34;
+  border: 1px solid #343841;
+  border-radius: 10px;
+  color: #f3f4f6;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #343841;
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+form input {
+  flex: 1;
+  height: 44px;
+  padding: 0 14px;
+  background: #0d0f14;
+  border: 1px solid #2a2d34;
+  border-radius: 10px;
+  color: #e6e6eb;
+}
+
+form input::placeholder {
+  color: #9ca3af;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #4b5563;
+}
+
+form button {
+  height: 44px;
+  padding: 0 18px;
+  background: #2a2d34;
+  border: 1px solid #343841;
+  border-radius: 10px;
+  color: #f3f4f6;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #343841;
+}
+
+form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ================= TASK ITEM ================= */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #0d0f14;
+  border: 1px solid #23262d;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+/* ================= TASK TEXT ================= */
+.task-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f3f4f6;
+  margin-bottom: 6px;
+}
+
+.task-item.done .task-title {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* ================= STATUS BADGE ================= */
+.task-status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* Status colors (subtle, ChatGPT-style) */
+.status-todo {
+  background: #23262d;
+  color: #c7c9d1;
+}
+
+.status-progress {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+}
+
+.status-done {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-actions button {
+  height: 32px;
+  padding: 0 14px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* Action buttons (subtle) */
+.btn-start {
+  background: #2a2d34;
+  border-color: #343841;
+  color: #fbbf24;
+}
+
+.btn-done {
+  background: #2a2d34;
+  border-color: #343841;
+  color: #4ade80;
+}
+
+.btn-delete {
+  background: #2a2d34;
+  border-color: #343841;
+  color: #f87171;
+}
+
+.task-actions button:hover {
+  background: #343841;
+}
+
+/* ================= MODAL ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 15, 20, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 92%;
+  max-width: 420px;
+  background: #16181d;
+  border: 1px solid #23262d;
+  border-radius: 14px;
+  padding: 22px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal h2 {
+  margin-bottom: 18px;
+  font-size: 1.2rem;
+  color: #f3f4f6;
+}
+
+/* Modal input */
+.modal input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  background: #0d0f14;
+  border: 1px solid #2a2d34;
+  border-radius: 10px;
+  color: #e6e6eb;
+  margin-bottom: 18px;
+}
+
+/* Modal buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-actions button {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.modal-actions button[type="submit"] {
+  background: #2a2d34;
+  border: 1px solid #343841;
+  color: #f3f4f6;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid #343841;
+  color: #e6e6eb;
+}
+
+.modal-actions button:hover {
+  background: #343841;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 540px) {
+  form {
+    flex-direction: column;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .task-actions {
+    width: 100%;
+  }
+
+  .task-actions button {
+    width: 100%;
+  }
+}
