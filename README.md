@@ -32,9 +32,9 @@ http://127.0.0.1:8000
 
 Frontend Setup
 
-cd frontend
-npm install
-npm run dev
+- cd frontend
+- npm install
+- npm run dev
 
 Frontend URL:
 http://localhost:5173
