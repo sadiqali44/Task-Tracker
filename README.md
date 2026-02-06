@@ -45,10 +45,10 @@ API Endpoints
 Base URL:
 /api
 
-POST    /tasks/                Create task
-GET     /tasks/all/            Get all tasks
-PATCH   /tasks/<id>/           Update task status
-DELETE  /tasks/<id>/delete/    Delete task
+- POST    /tasks/                Create task
+- GET     /tasks/all/            Get all tasks
+- PATCH   /tasks/<id>/           Update task status
+- DELETE  /tasks/<id>/delete/    Delete task
 
 
 Notes
